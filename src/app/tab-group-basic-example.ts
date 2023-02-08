@@ -3,11 +3,21 @@ import { FormBuilder } from '@angular/forms';
 /**
  * @title Basic use of the tab group
  */
+
+ export interface FormInfo {
+  name: string;
+  age: number;
+  address: string;
+  anything: string;
+}
+
 @Component({
   selector: 'tab-group-basic-example',
   templateUrl: 'tab-group-basic-example.html',
 })
+
 export class TabGroupBasicExample {
+
 
   constructor(
     private formBuilder: FormBuilder
@@ -17,13 +27,20 @@ export class TabGroupBasicExample {
   name: '',
   age: '',
   address: '',
-  anything: '',
+  anything: ''
   });
 
+
   onSubmit() {
+
+    this.tabForm = this.formBuilder.group({
+      name: '',
+      age: '',
+      address: '',
+      anything: ''
+    })
     // Process checkout data here
     // Process checkout data here
-    this.tabForm.reset();
     return this.tabForm;
     }
 

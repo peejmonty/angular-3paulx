@@ -1,37 +1,38 @@
 <div>
   <form [formGroup]= "tabForm" (ngSubmit)="onSubmit()">
-<mat-tab-group>
-  <mat-tab label="First"> 
-      <div>
+    <mat-tab-group>
+      <mat-tab label="First">
+    <div>
         <label for="name">
           Name
         </label>
         <input id="name" type="text" formControlName="name">
       </div>
-        <div>
+      <div>
         <label for="age">
           Age
         </label>
-        <input id="age" type="text" formContolName="age">
+        <input id="age" type="text" formControlName="age">
       </div>
     </mat-tab>
-  <mat-tab label="Second"> 
+    <mat-tab label="Second">
       <div>
         <label for="address">
           Address
-        </label>
+          </label>
         <input id="address" type="text" formControlName="address">
-      </div>  
-  </mat-tab>
-  <mat-tab label="Third"> 
-      <div>
-        <label for="anything">
-          Anything Else Your Little Heart Desires
-        </label>
-        <input id="anything" type="text" formContolName="anything">
-      </div>
-  </mat-tab>
-</mat-tab-group>
+        </div>
+      </mat-tab>
+      <mat-tab label="Third">
+        <div>
+          <label for="anything">
+            Anything else your little heart desires
+          </label>
+          <input id="anything" type="text" formControlName="anything">
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+
 <span>
   <button class= "button" type="submit">Submit</button>
 </span>
