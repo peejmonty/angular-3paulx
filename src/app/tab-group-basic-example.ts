@@ -9,17 +9,27 @@ import { FormBuilder } from '@angular/forms';
 })
 export class TabGroupBasicExample {
 
-  private formBuilder: FormBuilder;
+  constructor(
+    private formBuilder: FormBuilder
+    ){}
 
-  onSubmit(): void {
+  tabForm = this.formBuilder.group({
+  name: '',
+  age: '',
+  address: '',
+  anything: '',
+  });
+
+  onSubmit() {
     // Process checkout data here
-    this.items = this.cartService.clearCart();
-    console.warn('Your order has been submitted', this.checkoutForm.value);
-    this.checkoutForm.reset();
-  }
+    // Process checkout data here
+    this.tabForm.reset();
+    return this.tabForm;
+    }
+
 }
 
 
 /**  Copyright 2023 Google LLC. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at https://angular.io/license */
+    can be found in the LICENSE file at https://angular.io/license **/
