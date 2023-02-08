@@ -39,9 +39,6 @@ export class TabGroupBasicExample {
       address: '',
       anything: ''
     })
-
-    // Process checkout data here
-    // Process checkout data here
     return this.tabForm;
     }
 
