@@ -32,14 +32,14 @@ export class TabGroupBasicExample {
 
 
   onSubmit() {
-
+    console.warn('Your form has been submitted', this.tabForm.value);
     this.tabForm = this.formBuilder.group({
       name: '',
       age: '',
       address: '',
       anything: ''
     })
-    console.warn('Your form has been submitted', this.tabForm.value);
+
     // Process checkout data here
     // Process checkout data here
     return this.tabForm;
