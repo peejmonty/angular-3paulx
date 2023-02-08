@@ -7,7 +7,17 @@ import { FormBuilder } from '@angular/forms';
   selector: 'tab-group-basic-example',
   templateUrl: 'tab-group-basic-example.html',
 })
-export class TabGroupBasicExample {}
+export class TabGroupBasicExample {
+
+  private formBuilder: FormBuilder;
+
+  onSubmit(): void {
+    // Process checkout data here
+    this.items = this.cartService.clearCart();
+    console.warn('Your order has been submitted', this.checkoutForm.value);
+    this.checkoutForm.reset();
+  }
+}
 
 
 /**  Copyright 2023 Google LLC. All Rights Reserved.
