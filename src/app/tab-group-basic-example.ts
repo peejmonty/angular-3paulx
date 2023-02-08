@@ -39,6 +39,7 @@ export class TabGroupBasicExample {
       address: '',
       anything: ''
     })
+    console.warn('Your form has been submitted', this.tabForm.value);
     // Process checkout data here
     // Process checkout data here
     return this.tabForm;
