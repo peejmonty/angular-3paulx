@@ -23,17 +23,48 @@ export class TabGroupBasicExample {
     private formBuilder: FormBuilder
     ){}
 
-  tabForm = this.formBuilder.group({
+  tabForm1 = this.formBuilder.group({
   name: '',
   age: '',
   address: '',
   anything: ''
-  });
+  })
 
+  tabForm2 = this.formBuilder.group({
+    address: '',
+  })
 
-  onSubmit() {
-    console.warn('Your form has been submitted', this.tabForm.value);
-    return this.tabForm.reset();
+  tabForm3 = this.formBuilder.group({
+    notes: ''
+  })
+
+  tabForm = ({
+    tabForm1: this.tabForm1,
+    tabForm2: this.tabForm2,
+    tabForm3: this.tabForm3
+  }
+  )
+
+  submitTabForm1() {
+    return this.tabForm1.reset();
+  }
+
+  submitTabForm2() {
+    return this.tabForm2.reset();
+  }
+
+  submitTabForm3() {
+    return this.tabForm3.reset();
+  }
+
+  onSubmit(): void {
+
+    //** Submit Logic here */
+    console.warn('Your form has been submitted', this.tabForm1.value, this.tabForm2.value, this.tabForm3.value);
+    this.submitTabForm1();
+    this.submitTabForm2();
+    this.submitTabForm3();
+
     }
 
 }
